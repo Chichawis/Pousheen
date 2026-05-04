@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pousheen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="side-panel">
+      <div class="brand-card">
+        <p class="eyebrow">Para tu novia</p>
+        <h1>Pousheen</h1>
+        <p class="brand-copy">Una mascota virtual inspirada en Pou, pero convertida en una aventura dulce con Pusheen.</p>
+      </div>
+
+      <section class="status-card">
+        <div class="status-heading">
+          <div>
+            <p class="eyebrow">Estado</p>
+            <h2 id="petNameLabel">Pusheen</h2>
+          </div>
+          <div class="pill-group">
+            <span class="pill">Nivel <strong id="levelValue">1</strong></span>
+            <span class="pill">Monedas <strong id="coinsValue">0</strong></span>
+          </div>
+        </div>
+
+        <div class="meters" id="meters"></div>
+
+        <div class="progress-block">
+          <div class="progress-caption">
+            <span>Experiencia</span>
+            <span id="xpLabel">0 / 120</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="xpFill"></div>
+          </div>
+        </div>
+
+        <div class="pet-mood-card">
+          <span id="moodEmoji" class="mood-emoji">😸</span>
+          <div>
+            <p class="eyebrow">Humor actual</p>
+            <strong id="moodText">Feliz y cómoda</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-actions">
+        <button data-action="save">Guardar</button>
+        <button data-action="reset">Reiniciar</button>
+      </section>
+    </aside>
+
+    <main class="main-panel">
+      <section class="hero-room">
+        <div class="room-header">
+          <div>
+            <p class="eyebrow">Habitación</p>
+            <h2 id="roomTitle">Sala principal</h2>
+            <p id="roomDescription">Cuida a Pusheen, juega con ella y mantén sus necesidades en equilibrio.</p>
+          </div>
+          <div class="time-card">
+            <span class="time-label">Hora del juego</span>
+            <strong id="clockValue">08:00</strong>
+            <button id="sleepToggle" class="sleep-toggle">Apagar luz</button>
+          </div>
+        </div>
+
+        <div class="room-scene" id="roomScene">
+          <div class="scene-bg"></div>
+          <div class="pet-stage">
+            <div class="pet-shadow"></div>
+            <div class="pet" id="petAvatar">
+              <img class="pet-image" src="imagenes/pusheen.png" alt="Pusheen">
+              <div class="pet-accessory" id="petAccessory"></div>
+            </div>
+          </div>
+          <div class="speech-bubble" id="speechBubble">Miau... quiero mimos.</div>
+        </div>
+      </section>
+
+      <section class="room-nav" id="roomTabs"></section>
+
+      <section class="content-grid">
+        <div class="activity-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">Acciones</p>
+              <h3 id="panelTitle">Sala principal</h3>
+            </div>
+            <span class="card-badge" id="panelBadge">Interactúa</span>
+          </div>
+          <div id="panelContent" class="panel-content"></div>
+        </div>
+
+        <div class="activity-card shop-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">Inventario & tienda</p>
+              <h3>Desbloqueos</h3>
+            </div>
+            <span class="card-badge">Personaliza</span>
+          </div>
+          <div id="inventoryContent" class="panel-content"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <template id="actionButtonTemplate">
+    <button class="action-btn">
+      <span class="action-title"></span>
+      <span class="action-meta"></span>
+    </button>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
